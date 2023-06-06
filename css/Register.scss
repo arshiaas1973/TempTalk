@@ -1,0 +1,190 @@
+@font-face {
+    font-family: Rubik;
+    src: url(../fonts/RubikMarkerHatch-Regular.ttf);
+}
+@font-face {
+    font-family: Boogaloo;
+    src: url(../fonts/Boogaloo-Regular.ttf);
+}
+@font-face {
+    font-family: coolveticarg;
+    src: url(../fonts/coolveticarg.otf);
+}
+@font-face {
+    font-family: roboto;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+body{
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+.body-light{ background-color: #F5F5F4; }
+.body-dark{ background-color:#34495E; }
+ul{ list-style: none; }
+a{ text-decoration: none; }
+*:focus{ outline: none;}
+.navbar{
+    position: sticky;
+    float: center;
+    max-width: 200px;
+    padding: 15px;
+    z-index: 2;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+.navbar-dark{ background-color: #2980B9;}
+.navbar-light{ background-color: #BDC3C7;}
+.navbar-logo{ display: inline-block; width: 100%;}
+.navbar ul{
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+}
+.navbar ul li{
+    display: inline-block;
+    width: fit-content;
+}
+.register-panel{
+    position: absolute;
+    bottom: 0px;
+    max-width: 600px;
+    height: 80%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 20px;
+    border-top-right-radius: 35px;
+    border-top-left-radius: 35px;
+}
+.register-panel span.header{ 
+    font-family: Rubik; 
+    font-size: 30px;
+}
+.register-panel form{margin-top: 30px;}
+.register-panel form span.titles{ 
+    display: flex;
+    font-family: Boogaloo; 
+    font-size: 25px; 
+    justify-content: left;
+    margin-left: 20px;
+}
+.register-panel form input[type=text],
+.register-panel form input[type=email],
+.register-panel form input[type=password]{
+    display: flex;
+    margin-top: -10px;
+    // float: left;
+    margin-left: 60px;
+    border-radius: 50px;
+    border: 5px solid #34495E;
+    font-size: 22px;
+    width: 65%;
+    padding: 5px 20px;
+    transition: all 0.5s ease-in-out;
+}
+.register-panel form .dark-input{background-color: #475569; color: aliceblue;}
+.register-panel form input[type=button].submit{
+    border-radius: 50px;
+    margin-top: 20px;
+    font-size: 19px;
+    width: 80%;
+    padding: 0px 20px;
+    background-color: #DC2626;
+    border: 2px solid #B71C1C;
+    color: aliceblue;
+    transition: all 0.25s ease-in-out;
+    font-family: coolveticarg;
+    padding: 5px;
+    cursor: pointer;
+}
+.register-panel form input[type=button].submit:hover{
+    font-size: 25px;
+}
+.register-panel form input[type=button].submit:disabled{
+    background-color: #FDA4AF;
+}
+.register-panel form input[type=text]:hover,
+.register-panel form input[type=email]:hover,
+.register-panel form input[type=password]:hover{
+    border: 5px solid #F59E0B !important;
+}
+.register-panel form input[type=text]:focus,
+.register-panel form input[type=email]:focus,
+.register-panel form input[type=password]:focus{
+    border: 5px solid #DC2626 !important;
+    font-size: 25px;
+    margin-left: 0px;
+    width: 80%;
+}
+.register-panel-dark{ background: #94A3B8; }
+.register-panel-light{ background: #E4E4E7; }
+.register-panel form div.error{
+    background-color: #F44336;
+    border: 2px solid #B71C1C;
+    padding: 5px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    display: none;
+}
+.register-panel form div.error p{
+    color: #FFEBEE;
+    font-family: roboto;
+    font-size: 20px;
+}
+.register-panel .login-button{
+    border-radius: 50px;
+    font-size: 19px;
+    width: 80%;
+    padding: 0px 20px;
+    background-color: #3949AB;
+    border: 2px solid #283593;
+    color: aliceblue;
+    transition: all 0.25s ease-in-out;
+    font-family: coolveticarg;
+    padding: 5px;
+    cursor: pointer;
+    display: block;
+}
+.register-panel .login-button:hover{
+    background-color: aliceblue;
+    border: 2px solid rgb(238, 238, 238);
+    color: #283593;
+}
+.register-panel form .eye-icon{
+    display: flex;
+    padding: 4px;
+    border-radius: 50px;
+    margin-left: 445px;
+    margin-top: -42.5px;
+    background-color: #fff;
+    border: 3px solid #fff;
+    cursor: pointer;
+}
+.register-panel form .eye-icon#closed:hover{
+    border: 3px solid rgb(48, 184, 143);
+}
+.register-panel form .eye-icon#opened:hover{
+    border: 3px solid rgb(184, 48, 59);
+}
+.register-panel form .agreement{
+    margin: 10px 0px;
+    line-height: 40px;
+}
+.register-panel form .agreement img{
+    display: flex;
+    border-radius: 20px;
+    float: left;
+    margin: 0px 10px;
+    margin-left: 25px;
+}
+.register-panel form .agreement a{
+    display: flex;
+    float: right;
+    margin: 0px 10px;
+    color: #084786;
+}
+.register-panel form .agreement img:hover{
+    background-color: #BDC3C7;
+}

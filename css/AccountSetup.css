@@ -1,0 +1,404 @@
+@font-face {
+  font-family: Rubik;
+  src: url(../fonts/RubikMarkerHatch-Regular.ttf);
+}
+@font-face {
+  font-family: typewcond;
+  src: url(../fonts/typewcond.otf);
+}
+@font-face {
+  font-family: coolveticarg;
+  src: url(../fonts/coolveticarg.otf);
+}
+@font-face {
+  font-family: Boogaloo;
+  src: url(../fonts/Boogaloo-Regular.ttf);
+}
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.body-light {
+  background-color: #ECF0F1;
+}
+
+.body-dark {
+  background-color: #34495E;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-family: Rubik;
+  font-weight: normal;
+}
+
+.navbar {
+  position: sticky;
+  float: center;
+  max-width: 200px;
+  padding: 15px;
+  z-index: 2;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  font-family: typewcond;
+  font-size: 18px;
+}
+
+.navbar-dark {
+  background-color: #2980B9;
+}
+
+.navbar-light {
+  background-color: #BDC3C7;
+}
+
+.navbar-logo {
+  display: inline-block;
+  width: 100%;
+}
+
+.navbar ul {
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+}
+
+.navbar ul li {
+  display: inline-block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.blue {
+  color: #0E7490;
+}
+
+.red {
+  color: #B71C1C;
+}
+
+.main-box {
+  opacity: 1;
+  transition: all 0.4s ease-in-out;
+}
+
+.big-panel {
+  max-width: 1200px;
+  margin-top: 60px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.big-panel-light {
+  background-color: #E5E5E5;
+}
+
+.big-panel-dark {
+  background-color: #334155;
+}
+
+.big-panel .prof-pic,
+.edit-dialog div .prof-pic {
+  cursor: pointer;
+  border-radius: 200px;
+  margin-top: 20px;
+}
+
+.big-panel .prof-pic {
+  max-width: 400px;
+  max-height: 400px;
+}
+
+.big-panel-heading-light {
+  color: #000;
+}
+
+.big-panel-heading-dark {
+  color: aliceblue;
+}
+
+.big-panel form input[type=file] {
+  display: none;
+}
+
+.edit-dialog {
+  position: absolute;
+  top: 50px;
+  display: none;
+  max-width: 800px;
+  max-height: 850px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 20px;
+  padding-bottom: 40px;
+  border-radius: 20px;
+}
+
+.error-dialog {
+  position: absolute;
+  top: 250px;
+  display: none;
+  max-width: 700px;
+  max-height: 600px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 30px;
+  padding-bottom: 40px;
+  border-radius: 20px;
+  font-size: 40px;
+  border: 4px solid #0f0f0f;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  transition: all 0.5s ease-in-out;
+}
+
+.edit-dialog .close-button,
+.error-dialog .close-button {
+  height: 64px;
+}
+
+.error-dialog .close-button {
+  margin-bottom: 40px;
+}
+
+.edit-dialog .close-button input,
+.error-dialog .close-button input {
+  width: 64px;
+  border-radius: 20px;
+  height: 100%;
+  border: 4px solid #B71C1C;
+  color: #B71C1C;
+  text-align: center;
+  font-size: 25px;
+  float: right;
+  font-family: coolveticarg;
+}
+
+.error-dialog .close-button input {
+  float: none;
+}
+
+.error-dialog-light {
+  background-color: #d0d2d3;
+}
+
+.error-dialog-dark {
+  background-color: #16A085;
+}
+
+.edit-dialog-light {
+  background-color: #64748B;
+}
+
+.edit-dialog-dark {
+  background-color: #52525B;
+}
+
+.edit-dialog div.overlay-owner {
+  min-width: 400px;
+  min-height: 400px;
+  margin-top: -404px;
+}
+
+.edit-dialog div.overlay-owner div.overlay {
+  background: #0e0e0e30;
+  -webkit-appearance: none;
+  -moz-apperarance: none;
+  -o-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  outline: none;
+  padding: 0px;
+  overflow: hidden;
+  -ms-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  border: 4px solid #000;
+  top: 104px;
+  width: 400px;
+  height: 400px;
+  color: transparent;
+  text-decoration: none;
+  resize: both;
+  z-index: 2;
+  position: sticky;
+  min-width: 40px;
+  min-height: 40px;
+}
+
+.edit-dialog div.overlay-owner div.overlay div.sizable {
+  width: 40px;
+  height: 40px;
+  background: blueviolet;
+  border: 5px solid #0f0f0f;
+  display: flex;
+  float: right;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  margin-right: -20px;
+  margin-bottom: -20px;
+}
+
+.big-panel .submit-pic,
+.edit-dialog .submit-pic,
+.twofa-main form input[type=button].submit-2fa {
+  border-radius: 50px;
+  margin-top: 20px;
+  font-size: 19px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #DC2626;
+  border: 2px solid #B71C1C;
+  color: aliceblue;
+  transition: all 0.25s ease-in-out;
+  font-family: coolveticarg;
+  margin-top: 20px;
+  margin-left: 15px;
+  padding: 10px 50px;
+  cursor: pointer;
+}
+
+.twofa-main form input[type=button].submit-2fa {
+  margin-left: 0px;
+}
+
+.big-panel .submit-pic:hover,
+.twofa-main form input[type=button].submit-2fa:hover {
+  background-color: aliceblue;
+  border: 2px solid #eeeeee;
+  color: #B71C1C;
+}
+
+.big-panel .edit-pic {
+  border-radius: 50px;
+  font-size: 19px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #3949AB;
+  border: 2px solid #283593;
+  color: aliceblue;
+  transition: all 0.25s ease-in-out;
+  font-family: coolveticarg;
+  margin-top: 20px;
+  padding: 10px 50px;
+  cursor: pointer;
+}
+
+.big-panel .edit-pic:hover {
+  background-color: aliceblue;
+  border: 2px solid #eeeeee;
+  color: #283593;
+}
+
+.big-panel div.error {
+  background-color: #F44336;
+  border: 2px solid #B71C1C;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  display: none;
+}
+
+.big-panel div.error p {
+  color: #FFEBEE;
+  font-family: roboto;
+  font-size: 20px;
+}
+
+.twofa-main {
+  max-width: 700px;
+  margin-top: 60px;
+  padding: 20px;
+  border-radius: 40px;
+}
+
+.twofa-main-light {
+  background-color: #E5E5E5;
+}
+
+.twofa-main-dark {
+  background-color: #334155;
+}
+
+.twofa-main form div.options .dark-checkbox {
+  border-radius: 20px;
+  display: flex;
+  float: left;
+  margin-right: 15px;
+}
+
+.twofa-main form div.options .dark-checkbox:hover {
+  background-color: #bd4242;
+}
+
+.twofa-main form div.options .light-checkbox {
+  background-color: #aaa;
+  border-radius: 20px;
+  display: flex;
+  float: left;
+  margin-right: 15px;
+}
+
+.twofa-main form div.options .dark-checkbox:hover {
+  background-color: #4277bd;
+}
+
+.twofa-main form div.options .checkbox-text {
+  line-height: 40px;
+  display: flex;
+  font-family: Boogaloo;
+  font-size: 25px;
+}
+
+.twofa-main form div.options .checkbox-text-light {
+  color: #222;
+}
+
+.twofa-main form div.options .checkbox-text-dark {
+  color: #ccc;
+}
+
+.twofa-main form div.options {
+  padding: 0px 20px;
+  margin-bottom: 20px;
+}
+
+.twofa-main form div.choices select {
+  max-width: 350px;
+  font-size: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: white;
+  border: 5px solid #ccc;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.twofa-main form div.choices span {
+  line-height: 40px;
+  font-family: Boogaloo;
+  font-size: 23px;
+  margin-right: 20px;
+}
+
+.twofa-main form div.choices span.text-light {
+  color: #222;
+}
+
+.twofa-main form div.choices span.text-dark {
+  color: #fff;
+}/*# sourceMappingURL=AccountSetup.css.map */
