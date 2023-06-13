@@ -143,11 +143,27 @@ function SubmitTwoFA() {
             if(res == true){
                 window.location.href = "/account/twofaset?set=none";
             }else{
-                window.open("https://www.techtarget.com/searchsecurity/definition/two-factor-authentication", "_blank");
+                window.open("https://www.microsoft.com/en-ww/security/business/security-101/what-is-two-factor-authentication-2fa", "_blank");
             }
         }
     }else{
         var form = document.getElementById("twofa-form");
         form.submit();
     }
+}
+$(".twofa-main h1:first-of-type").hover(function () {
+        $(".twofa-main .header-tooltip").css("display","inline-block");
+    }, function () {
+        $(".twofa-main .header-tooltip").css("display","none");
+    }
+);
+function SubmitInfos(){
+    var birthyear = $(".last-main form .choices #year-selector").val();
+    var birthmonth = $(".last-main form .choices #month-selector").val();
+    var birthday = $(".last-main form .choices #day-selector").val();
+    $(".last-main form #birthyear").val(birthyear);
+    $(".last-main form #birthmonth").val(birthmonth);
+    $(".last-main form #birthday").val(birthday);
+    var form = document.querySelector(".last-main form#last-form");
+    form.submit();
 }

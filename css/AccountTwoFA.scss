@@ -1,0 +1,154 @@
+@font-face {
+    font-family: Rubik;
+    src: url(../fonts/RubikMarkerHatch-Regular.ttf);
+}
+@font-face {
+    font-family: typewcond;
+    src: url(../fonts/typewcond.otf);
+}
+@font-face {
+    font-family: coolveticarg;
+    src: url(../fonts/coolveticarg.otf);
+}
+@font-face {
+    font-family: Boogaloo;
+    src: url(../fonts/Boogaloo-Regular.ttf);
+}
+@font-face {
+    font-family: roboto;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+body{
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+.body-light{ background-color: #ECF0F1; }
+.body-dark{ background-color:#34495E; }
+ul{ list-style: none; }
+a{ text-decoration: none; }
+h1{ font-family: Rubik; font-weight: normal;}
+*:focus{ outline: none;}
+.navbar{
+    position: sticky;
+    float: center;
+    max-width: 200px;
+    padding: 15px;
+    z-index: 2;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    font-family: typewcond;
+    font-size: 18px;
+}
+.navbar-dark{ background-color: #2980B9;}
+.navbar-light{ background-color: #BDC3C7;}
+.navbar-logo{ display: inline-block; width: 100%;}
+.navbar ul{
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+}
+.navbar ul li{
+    display: inline-block;
+    width: fit-content;
+}
+.twofa-section{
+    max-width: 600px;
+    margin-top: 60px;
+    padding: 20px;
+    border-radius: 40px;
+}
+.twofa-section-light{ background-color: #E5E5E5;}
+.twofa-section-dark{ background-color: #334155;}
+.heading-light{color: #000;}
+.heading-dark{color: aliceblue;}
+.twofa-section span.titles{
+    display: flex;
+    font-family: Boogaloo; 
+    font-size: 25px; 
+    justify-content: left;
+    margin-left: 20px;
+}
+.twofa-section span.titles-light{color: #232323;}
+.twofa-section span.titles-dark{color: #dedede;}
+.twofa-section div.error{
+    background-color: #F44336;
+    border: 2px solid #B71C1C;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    display: none;
+}
+.twofa-section div.error p{
+    color: #FFEBEE;
+    font-family: roboto;
+    font-size: 20px;
+}
+.twofa-section input[type=email],
+.twofa-section .code-prompt input[type=text]#code{
+    display: flex;
+    margin-top: 10px;
+    // margin-left: 60px;
+    border-radius: 50px;
+    border: 5px solid #34495E;
+    font-size: 25px;
+    min-width: 400px;
+    padding: 5px 20px;
+    transition: all 0.5s ease-in-out;
+}
+.twofa-section .code-prompt span.titles{ display: inline-block; }
+.twofa-section .code-prompt input[type=text]#code{ 
+    display: inline-block; 
+    max-width: 200px !important; 
+    min-width: 200px !important;  
+    width: 50px;
+}
+.twofa-section input[type=button].button,
+.twofa-section .code-prompt input[type=button].button{
+    display: flex;
+    border-radius: 50px;
+    margin-top: 20px;
+    font-size: 19px;
+    width: fit-content;
+    background-color: #DC2626;
+    border: 2px solid #B71C1C;
+    color: aliceblue;
+    transition: all 0.25s ease-in-out;
+    font-family: coolveticarg;
+    margin-top: -42px;
+    margin-right: -340px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.twofa-section .code-prompt input[type=button].button{ position: relative; margin-right: -225px; }
+.twofa-section input[type=button].button:disabled,
+.twofa-section .code-prompt input[type=button].button:disabled{
+    background-color: #FDA4AF;
+}
+.twofa-section input[type=email]:hover,
+.twofa-section .code-prompt input[type=text]#code:hover{
+    border: 5px solid #F59E0B !important;
+}
+.twofa-section input[type=email]:focus{
+    border: 5px solid #DC2626 !important;
+    font-size: 25px;
+    margin-left: 0px;
+    min-width: 470px;
+}
+.twofa-section .code-prompt input[type=text]#code:focus{
+    border: 5px solid #DC2626 !important;
+}
+.twofa-section input[type=email]:focus ~ .button{
+    margin-right: -400px;
+}
+.twofa-section input[type=button].button:hover{
+    background-color: aliceblue;
+    border: 2px solid rgb(238, 238, 238);
+    color: #B71C1C;
+}
+.twofa-section .code-prompt{
+    display: none;
+    opacity: 0;
+    transition: all 0.25s ease-in;
+}

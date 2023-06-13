@@ -25,6 +25,7 @@ body{
 ul{ list-style: none; }
 a{ text-decoration: none; }
 h1{ font-family: Rubik; font-weight: normal;}
+*:focus{ outline: none;}
 .navbar{
     position: sticky;
     float: center;
@@ -245,20 +246,22 @@ h1{ font-family: Rubik; font-weight: normal;}
     font-family: roboto;
     font-size: 20px;
 }
-.twofa-main{
+.twofa-main,
+.last-main{
     max-width: 700px;
     margin-top: 60px;
     padding: 20px;
     border-radius: 40px;
 }
 
-.twofa-main-light{ background-color: #E5E5E5;}
-.twofa-main-dark{ background-color: #334155;}
+.twofa-main-light,.last-main-light{ background-color: #E5E5E5;}
+.twofa-main-dark,.last-main-dark{ background-color: #334155;}
 @mixin checkbox{
     border-radius: 20px;
     display: flex;
     float: left;
     margin-right: 15px;
+    cursor: pointer;
 }
 .twofa-main form div.options .dark-checkbox{ @include checkbox(); }
 .twofa-main form div.options .dark-checkbox:hover{ background-color: #bd4242;}
@@ -276,7 +279,11 @@ h1{ font-family: Rubik; font-weight: normal;}
     padding: 0px 20px;
     margin-bottom: 20px;
 }
-.twofa-main form div.choices select{
+.twofa-main form div.options:first-of-type{
+    margin-top: 25px;
+}
+.twofa-main form div.choices select,
+.last-main form div.choices select{
     max-width: 350px;
     font-size: 20px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -286,12 +293,75 @@ h1{ font-family: Rubik; font-weight: normal;}
     padding: 5px 10px;
 }
 
-.twofa-main form div.choices span{ 
+.twofa-main form div.choices span,
+.last-main form div.choices span{ 
     line-height: 40px;
     // display: flex;
     font-family: Boogaloo; 
-    font-size: 23px;
+    font-size: 28px;
     margin-right: 20px; 
 }
-.twofa-main form div.choices span.text-light{ color: #222;}
-.twofa-main form div.choices span.text-dark{ color: #fff;}
+.twofa-main form div.choices span.text-light, .last-main form div.choices span.text-light{ color: #222;}
+.twofa-main form div.choices span.text-dark, .last-main form div.choices span.text-dark{ color: #fff;}
+.twofa-main h1:first-of-type{
+    cursor: pointer;
+}
+.twofa-main .header-tooltip{
+    display: none;
+    position: relative;
+    border-radius: 20px;
+    padding: 8px 15px;
+    margin-bottom: 20px;
+    margin-right: -355px;
+    font-size: 22px;
+    font-family: typewcond;
+}
+.twofa-main .header-tooltip-dark{ background-color: #52525B; color: #eee; border: 2px solid #f0f0f0;}
+.twofa-main .header-tooltip-light{ border: 2px solid #0f0f0f;}
+
+.last-main form div.options{
+    margin: 20px 0px;
+}
+.last-main form div.options span.titles{
+    font-family: Boogaloo; 
+    font-size: 25px;
+    margin-left: 20px;
+    line-height: 200px;
+    vertical-align: bottom;
+}
+.last-main form div.options textarea{
+    resize: none;
+    min-width: 400px;
+    min-height: 200px;
+    font-size: 26px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.last-main form div.options span.titles-light{color: #232323;}
+.last-main form div.options span.titles-dark{color: #dedede;}
+.last-main form div.options textarea:hover{
+    border: 5px solid #F59E0B !important;
+}
+.last-main form div.options textarea:focus{
+    border: 5px solid #DC2626 !important;
+}
+.last-main form input[type=button].button{
+    border-radius: 50px;
+    // margin-top: 20px;
+    font-size: 19px;
+    width: fit-content;
+    background-color: #DC2626;
+    border: 2px solid #B71C1C;
+    color: aliceblue;
+    transition: all 0.25s ease-in-out;
+    font-family: coolveticarg;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.last-main form input[type=button].button:disabled{
+    background-color: #FDA4AF;
+}
+.last-main form input[type=button].button:hover{
+    background-color: aliceblue;
+    border: 2px solid rgb(238, 238, 238);
+    color: #B71C1C;
+}

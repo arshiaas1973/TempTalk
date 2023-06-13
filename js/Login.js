@@ -10,6 +10,7 @@ function ContainsWords(string) {
     return false;
 }
 function Submit(){
+    $(".login-panel form input[type=button].submit").attr("disabled","disabled");
     var form = document.getElementById("loginForm");
     var user = document.getElementById("username").value;
     var pass = document.getElementById("password").value;
@@ -43,6 +44,7 @@ function Submit(){
                 $("#loginForm #username").css("border-color","#34495E");
             }
         }
+        $(".login-panel form input[type=button].submit").removeAttr("disabled");
     }
 }
 

@@ -52,4 +52,35 @@
             }
         }
 
+        public function ContainsLetters($str){
+            $words = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~`_-+={}[]|\":\\/.";
+            $strarray = str_split($str);
+            $wordsarray = str_split($words);
+            for ($i = 0; $i < strlen($str); $i++) {
+                for ($j = 0; $j < strlen($words); $j++) {
+                    if($strarray[$i] == $wordsarray[$j])
+                        return true;
+                }
+            }
+            return false;
+        }
+
+        public function userexists($username){
+            $con = $this->createConnection();
+            $query = mysqli_query($con,"SELECT * FROM `users` WHERE `u_username`='$username'");
+            if(mysqli_num_rows($query)>0)
+                return true;
+            else
+                return false;
+        }
+
+        public function getuserbyusername($username){
+            $con = $this->createConnection();
+            $query = mysqli_query($con,"SELECT * FROM `users` WHERE `u_username`='$username'");
+            if(mysqli_num_rows($query)>0)
+                return mysqli_fetch_assoc($query);
+            else
+                return false;
+        }
+
     }

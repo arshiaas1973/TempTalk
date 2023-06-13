@@ -75,7 +75,7 @@
                     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/core.js"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
-                    <script><?php require_once 'js/Register.js'; ?></script>
+                    <script><?php require_once 'js/Register.js';  require_once 'Models/Dev.php'; if(!DEVELOPEMENT_STATUS){ require_once 'js/ProductionMode.js'; } ?></script>
                     <script>
                         $("#registerForm #password").keydown(function(event){
                             if (event.keyCode == 13) {

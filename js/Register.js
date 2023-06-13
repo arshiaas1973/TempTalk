@@ -107,6 +107,7 @@ function passwordCheck(){
 }
 
 function Submit(){
+    $(".register-panel form input[type=button].submit").attr("disabled","disabled");
     var form = document.getElementById("registerForm");
     var user = document.getElementById("username").value;
     var pass = document.getElementById("password").value;
@@ -142,13 +143,14 @@ function Submit(){
             $("#registerForm #password").css("border-color","#B71C1C");
             $("#registerForm .error").css("display","block");
         }
+        $(".register-panel form input[type=button].submit").removeAttr("disabled");
     }
 }
 
 function onUsernameChanged(){
     $("#registerForm #displayedname").val($("#registerForm #username").val());
 }
-$("#registerForm #username").keydown(onUsernameChanged());
+$("#registerForm #username").keyup(onUsernameChanged());
 $("#registerForm .eye-icon").click(function(){
     var arg = $("#registerForm .eye-icon").attr("id");
     if(arg=="opened"){

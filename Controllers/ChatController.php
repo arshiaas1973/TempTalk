@@ -14,12 +14,10 @@
 
         public function checkCookie(){
             $expirationdate = json_decode($_COOKIE["loginbate"])->expire;
-            echo "<script>console.log(\"".$expirationdate."\");</script>";
-            echo "<script>console.log(\"".time()."\");</script>";
-            // if (($expirationdate-time())<86400) {
-            //     header("location: /home/logout");
-            //     exit;
-            // }
+            if (($expirationdate-time())<86400) {
+                header("location: /home/logout");
+                exit;
+            }
         }
 
         public function isLoggedin(){

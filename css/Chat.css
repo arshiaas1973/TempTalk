@@ -1,2 +1,318 @@
+@font-face {
+  font-family: Rubik;
+  src: url(../fonts/RubikMarkerHatch-Regular.ttf);
+}
+@font-face {
+  font-family: Boogaloo;
+  src: url(../fonts/Boogaloo-Regular.ttf);
+}
+@font-face {
+  font-family: coolveticarg;
+  src: url(../fonts/coolveticarg.otf);
+}
+@font-face {
+  font-family: roboto;
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: typewcond;
+  src: url(../fonts/typewcond.otf);
+}
+@font-face {
+  font-family: alice;
+  src: url(../fonts/AliceYotsubaInc.ttf);
+}
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
 
-/*# sourceMappingURL=Chat.css.map *//*# sourceMappingURL=Chat.css.map */
+.body-light {
+  background-color: #F5F5F4;
+}
+
+.body-dark {
+  background-color: #34495E;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+.chat-panel {
+  position: absolute;
+  bottom: 0px;
+  max-width: 1400px;
+  height: 90%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 20px;
+  border-top-right-radius: 35px;
+  border-top-left-radius: 35px;
+}
+
+.chat-panel-dark {
+  background: #94A3B8;
+}
+
+.chat-panel-light {
+  background: #E4E4E7;
+}
+
+.chat-panel .header-bar {
+  max-width: 1440px;
+  height: 50px;
+  margin: -20px;
+  border-top-right-radius: 35px;
+  border-top-left-radius: 35px;
+  padding: 10px 20px;
+}
+
+.chat-panel .header-bar-light {
+  background-color: #0284C7;
+}
+
+.chat-panel .header-bar-dark {
+  background-color: #F44336;
+  color: #fff;
+}
+
+.chat-panel .header-bar img.back-button {
+  width: 40px;
+  line-height: 60px;
+  transform: translateY(10%);
+  float: left;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.chat-panel .header-bar img.back-button:hover {
+  margin-left: -10px;
+  margin-right: 10px;
+}
+
+.chat-panel .header-bar img.user-pfp {
+  width: 40px;
+  height: 40px;
+  line-height: 60px;
+  transform: translateY(10%);
+  float: left;
+  border-radius: 20px;
+  margin-left: 25px;
+  border: 0px;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.chat-panel .header-bar img.user-pfp-light:hover {
+  margin-top: -3px;
+  margin-left: 35px;
+  border: 3px solid #343434;
+}
+
+.chat-panel .header-bar img.user-pfp-dark:hover {
+  margin-top: -3px;
+  margin-left: 35px;
+  border: 3px solid #888;
+}
+
+.chat-panel .header-bar span.user-displayedname {
+  float: left;
+  margin: 0px 10px;
+  font-family: alice;
+  font-size: 22px;
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  max-width: 450px;
+  line-height: 50px;
+  cursor: pointer;
+}
+
+.chat-panel .header-bar img.user-details {
+  width: 40px;
+  height: 40px;
+  line-height: 60px;
+  transform: translateY(10%);
+  float: right;
+  border-radius: 20px;
+  margin-left: 25px;
+  border: 0px;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.chat-panel .header-bar img.user-details:active {
+  transform: rotate(90deg);
+}
+
+.chat-panel .header-bar div.user-menu {
+  float: right;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: all 0.3s ease-in-out;
+}
+
+.chat-panel .header-bar div.user-menu ul {
+  float: right;
+  position: absolute;
+  top: 70px;
+  margin: 0px;
+  padding: 0px;
+  background: #EEEEEE;
+  color: #343434;
+  padding: 10px 20px;
+  right: 0px;
+  border-bottom-left-radius: 36px;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.chat-panel .header-bar div.user-menu ul li {
+  width: 100%;
+  margin: 10px 0px;
+  text-align: center;
+  font-size: 23px;
+  font-family: roboto;
+  cursor: pointer;
+}
+
+.chat-panel .header-bar div.user-menu ul hr {
+  color: #34343456;
+}
+
+.chat-panel .header-bar img.user-pfp-badge {
+  width: 20px;
+  height: 20px;
+  line-height: 60px;
+  float: left;
+  margin: 15px 0px;
+  display: inline-block;
+  background: #fff;
+  border-radius: 11px;
+  padding: 2px;
+}
+
+.chat-panel .user-profile-details {
+  height: 100%;
+  min-width: 450px;
+  float: right;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  transition: all 0.5s ease-in-out;
+  border-top-right-radius: 36px;
+  display: none;
+}
+
+.chat-panel .user-profile-details-dark {
+  background: #64748B;
+  color: #fff;
+}
+
+.chat-panel .user-profile-details-light {
+  background: #D4D4D4;
+  color: #232323;
+}
+
+.chat-panel .user-profile-details .user-details-header-bar {
+  height: 50px;
+  border-top-right-radius: 35px;
+}
+
+.chat-panel .user-profile-details .user-details-header-bar-dark {
+  background-color: #BE123C;
+}
+
+.chat-panel .user-profile-details .user-details-header-bar-light {
+  background-color: #BE123C;
+  color: #fff;
+}
+
+.chat-panel .user-profile-details .user-details-header-bar img.hide-button {
+  width: 40px;
+  line-height: 60px;
+  float: left;
+  transform: rotate3d(0, 1, 0, 180deg);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.chat-panel .user-profile-details .user-details-header-bar img.hide-button:hover {
+  margin-left: 10px;
+}
+
+.chat-panel .user-profile-details .user-details-header-bar span.panel-title {
+  float: left;
+  margin: 0px 10px;
+  font-family: coolveticarg;
+  font-size: 22px;
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  line-height: 50px;
+  cursor: pointer;
+}
+
+.chat-panel .user-profile-details img.full-user-pfp {
+  max-width: 420px;
+  max-height: 420px;
+  border-radius: 210px;
+  margin-top: 25px;
+  border: 0px;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.chat-panel .user-profile-details div.names {
+  max-width: 400px;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  height: 60px;
+  display: inline-block;
+}
+
+.chat-panel .user-profile-details div span.user-displayedname {
+  float: left;
+  margin: 0px 10px;
+  font-family: alice;
+  font-size: 22px;
+  display: flex;
+  margin-top: 8px;
+  height: 27px !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  max-width: 210px;
+}
+
+.chat-panel .user-profile-details div span.user-username {
+  float: left;
+  margin-left: 14px;
+  font-family: typewcond;
+  font-size: 20px;
+  margin-top: -8px;
+  color: #565656;
+  height: 27px !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  max-width: 210px;
+}/*# sourceMappingURL=Chat.css.map */

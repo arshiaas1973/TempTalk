@@ -81,7 +81,7 @@
                     <script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script>
                     <script><?php require_once 'js/Cookie.js'; ?></script>
                     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-                    <script><?php require_once 'js/Main.js'; ?></script>
+                    <script><?php require_once 'js/Main.js';  require_once 'Models/Dev.php'; if(!DEVELOPEMENT_STATUS){ require_once 'js/ProductionMode.js'; } ?></script>
                 </body>
                 </html>
                 <?php
