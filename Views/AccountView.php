@@ -556,7 +556,7 @@
                             }else{
                                 if(isset($_POST["set"])&&isset($_POST["email"])&&isset($_POST["code"])){
                                     if($_POST["set"]!="none"){
-                                        echo $this->controller->is_2fa_code_valid(htmlspecialchars($_POST["code"]),$_POST["email"]);
+                                        echo $this->controller->is_2fa_code_valid(htmlspecialchars($_POST["code"]),htmlspecialchars($_POST["email"]));
                                     }
                                 }else{
                                     header("location: /account/setup");

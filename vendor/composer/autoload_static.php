@@ -30,6 +30,7 @@ class ComposerStaticInitfadfd2e7f0feaeadde7f370b144e8012
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Http\\Client\\' => 16,
             'Psr\\Cache\\' => 10,
+            'PhpQuery\\' => 9,
             'ParagonIE\\ConstantTime\\' => 23,
             'PHPMailer\\PHPMailer\\' => 20,
         ),
@@ -77,6 +78,10 @@ class ComposerStaticInitfadfd2e7f0feaeadde7f370b144e8012
         'Psr\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
+        ),
+        'PhpQuery\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpquery/phpquery/src',
         ),
         'ParagonIE\\ConstantTime\\' => 
         array (

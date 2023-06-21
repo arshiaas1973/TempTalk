@@ -21,92 +21,15 @@
         public function index()
         {
             ?>
-            <!DOCTYPE html>
             <html lang="en">
             <head>
                 <meta charset="UTF-8">
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>TempMail - Please verify your 2FA email</title>
-                <style>
-                    @import url("https://fonts.cdnfonts.com/css/rubik-marker-hatch");
-                    @import url("https://fonts.cdnfonts.com/css/boogaloo");
-                    @import url("https://fonts.cdnfonts.com/css/share-techmono-2");
-                    body{
-                        width: 100%;
-                        height: 100%;
-                        padding: 0px;
-                        margin: 0px;
-                    }
-                    .body-light{ background-color: #ECF0F1; }
-                    .body-dark{ background-color:#34495E; }
-                    ul{ list-style: none; }
-                    a{ text-decoration: none; }
-                    h1{ font-family: "Rubik Marker Hatch", sans-serif; font-weight: normal;}
-                    *:focus{ outline: none;}
-                    .email-section{
-                        max-width: 600px;
-                        margin-top: 60px;
-                        padding: 20px;
-                        border-radius: 40px;
-                    }
-                    .email-section-light{ background-color: #E5E5E5;}
-                    .email-section-dark{ background-color: #334155;}
-                    .heading-light{color: #000;}
-                    .heading-dark{color: aliceblue;}
-                    .email-section span.titles{
-                        display: flex;
-                        font-family: "Boogaloo", sans-serif;
-                        font-size: 25px; 
-                        justify-content: center;
-                        margin-left: 20px;
-                    }
-                    .email-section span.titles-light{color: #232323;}
-                    .email-section span.titles-dark{color: #dedede;}
-                    .email-section div.code-section{
-                        padding: 10px;
-                        border-radius: 10px;
-                        margin-top: 25px;
-                        font-size: 30px;
-                        font-family: "Share-TechMono", sans-serif;
-                        width: -webkit-fit-content;
-                        width: -moz-fit-content;
-                        width: fit-content;
-                    }
-                    .email-section div.code-section-light{background:#E1F5FE; color:#121212;}
-                    .email-section div.code-section-dark{background:#607D8B; color:#dedede;}
-                </style>
+                <title>Document</title>
             </head>
-            <body class="body">
-                <center class="main-box">
-                    <div class="email-section">
-                        <h1 class="email-heading">Verify your 2FA Email</h1>
-                        <span class="titles">This code is your 2FA Email Verification.</span>
-                        <span class="titles">Don't show this code to anybody else. Just put this code the textbox that site provides.</span>
-                        <div class="code-section">#Code_Here#</span>
-                    </div>
-                </center>
-                <script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script>
-                <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-                <script>
-                    var $color_scheme = Cookies.get("color_scheme");
-                    function get_color_scheme() {
-                    return (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
-                    }
-                    function update_color_scheme() {
-                        Cookies.set("color_scheme", get_color_scheme());
-                        
-                    }
-                    if ((typeof $color_scheme === "undefined") || (get_color_scheme() != $color_scheme))
-                    update_color_scheme();
-                    if (window.matchMedia)
-                    window.matchMedia("(prefers-color-scheme: dark)").addListener( update_color_scheme );
-                    $("body").addClass("body-"+get_color_scheme()); 
-                    $("div.email-section").addClass("email-section-"+get_color_scheme());
-                    $("h1.email-heading").addClass("heading-"+get_color_scheme());
-                    $("span.titles").addClass("titles-"+get_color_scheme());
-                    $("div.code-section").addClass("code-section-"+get_color_scheme());
-                </script>
+            <body>
+                
             </body>
             </html>
             <?php

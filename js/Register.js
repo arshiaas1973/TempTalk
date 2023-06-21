@@ -147,10 +147,9 @@ function Submit(){
     }
 }
 
-function onUsernameChanged(){
+$("#registerForm #username").keyup(function(){
     $("#registerForm #displayedname").val($("#registerForm #username").val());
-}
-$("#registerForm #username").keyup(onUsernameChanged());
+});
 $("#registerForm .eye-icon").click(function(){
     var arg = $("#registerForm .eye-icon").attr("id");
     if(arg=="opened"){

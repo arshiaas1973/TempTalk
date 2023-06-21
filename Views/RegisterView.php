@@ -90,6 +90,10 @@
         }
 
         public function process(){
+            if($this->model->check_if_logged_in()){
+                header("location: /");
+                exit;
+            }
             if (isset($_POST["email"])&&isset($_POST["username"])&&isset($_POST["displayedname"])
                 &&isset($_POST["password"])&&isset($_POST["passcode"])) {
                 $email = $_POST["email"];

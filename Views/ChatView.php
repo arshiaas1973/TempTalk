@@ -59,7 +59,7 @@
                     <link rel="icon" href="/img/favicon.png" type="image/x-icon"/>
                     <title>TempTalk - Create Chat</title>
                 </head>
-                <body class="body-<?=$color_scheme?>">
+                <body class="body-<?=$color_scheme?>" onresize="WindowResize();">
                     <div class="chat-panel chat-panel-<?=$color_scheme?>">
                         <div class="header-bar header-bar-<?=$color_scheme?>">
                             <img class="back-button" src="/img/back-<?=$color_scheme?>.png" 
@@ -86,6 +86,137 @@
                                 </ul>
                             </div>
                         </div>
+                        <div class="message-section">
+                            <div class="message-body">
+                                <div class="message-spliter">
+                                    
+                                </div>
+                                <div class="message sender">
+                                    <span class="normal">
+                                        <img class="prof-pic" src="/img/profile.png"/>
+                                    </span>
+                                    <div>
+                                        <p>fdsdfs</p>
+                                        <div class="message-details">
+                                            <span class="message-status">Seen</span>
+                                            <span class="message-time">20:20</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="message sender">
+                                    <span class="normal">
+                                        <img class="prof-pic" src="/img/profile.png"/>
+                                    </span>
+                                    <div>
+                                        <p>fdsdfs</p>
+                                        <div class="message-details">
+                                            <span class="message-status">Seen</span>
+                                            <span class="message-time">20:20</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="message sender">
+                                    <span class="normal">
+                                        <img class="prof-pic" src="/img/profile.png"/>
+                                    </span>
+                                    <div>
+                                        <p>fdsdfs</p>
+                                        <div class="message-details">
+                                            <span class="message-status">Seen</span>
+                                            <span class="message-time">20:20</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="message sender">
+                                    <span class="normal">
+                                        <img class="prof-pic" src="/img/profile.png"/>
+                                    </span>
+                                    <div>
+                                        <p>fdsdfs</p>
+                                        <div class="message-details">
+                                            <span class="message-status">Seen</span>
+                                            <span class="message-time">20:20</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="message sender">
+                                    <span class="normal">
+                                        <img class="prof-pic" src="/img/profile.png"/>
+                                    </span>
+                                    <div>
+                                        <p>fdsdfs</p>
+                                        <div class="message-details">
+                                            <span class="message-status">Seen</span>
+                                            <span class="message-time">20:20</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="message sender">
+                                    <span class="normal">
+                                        <img class="prof-pic" src="/img/profile.png"/>
+                                    </span>
+                                    <div>
+                                        <p>fdsdfs</p>
+                                        <div class="message-details">
+                                            <span class="message-status">Seen</span>
+                                            <span class="message-time">20:20</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="message sender">
+                                    <span class="normal">
+                                        <img class="prof-pic" src="/img/profile.png"/>
+                                    </span>
+                                    <div>
+                                        <p>fdsdfs</p>
+                                        <div class="message-details">
+                                            <span class="message-status">Seen</span>
+                                            <span class="message-time">20:20</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="message sender">
+                                    <span class="normal">
+                                        <img class="prof-pic" src="/img/profile.png"/>
+                                    </span>
+                                    <div>
+                                        <p>fdsdfs</p>
+                                        <div class="message-details">
+                                            <span class="message-status">Seen</span>
+                                            <span class="message-time">20:20</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="message sender">
+                                    <span class="normal">
+                                        <img class="prof-pic" src="/img/profile.png"/>
+                                    </span>
+                                    <div>
+                                        <p>fdsdfs</p>
+                                        <div class="message-details">
+                                            <span class="message-status">Seen</span>
+                                            <span class="message-time">20:20</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="message sender">
+                                    <span class="normal">
+                                        <img class="prof-pic" src="/img/profile.png"/>
+                                    </span>
+                                    <div>
+                                        <p>fdsdfs</p>
+                                        <div class="message-details">
+                                            <span class="message-status">Seen</span>
+                                            <span class="message-time">20:20</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="message-box">
+                                <textarea></textarea>
+                                <button class="message-submit message-submit-<?=$color_scheme?>"><img src="/img/message-blob.png" width="40" height="40"/></button>
+                            </div>
+                        </div>
                         <div class="user-profile-details user-profile-details-<?=$color_scheme?>">
                             <div class="user-details-header-bar user-details-header-bar-<?=$color_scheme?>">
                                 <img class="hide-button" src="/img/back-dark.png" onclick="HideProfilePanel();"/>
@@ -94,20 +225,307 @@
                             <center>
                                 <img class="full-user-pfp" src="<?php if($user["u_id"]!=$usr["u_id"]) echo $usr["u_profilepic"]; else echo '/img/savedimages.webp'; ?>"/>
                                 <div class="names">
-                                    <span class="user-displayedname"><?php if($user["u_id"]!=$usr["u_id"]) echo $usr["u_displayedname"]; else echo 'Saved Messages'; ?></span>
-                                    <span class="user-username">@<?php echo $usr['u_username']; ?></span>
+                                    <span class="user-displayedname user-displayedname-<?=$color_scheme?>"><?php if($user["u_id"]!=$usr["u_id"]) echo $usr["u_displayedname"]; else echo 'Saved Messages'; ?></span>
+                                    <span class="user-username user-username-<?=$color_scheme?>">@<?php echo $usr['u_username']; ?></span>
                                 </div>
+                                <span class="user-titles">Joined since <span class="user-date">
+                                    <?php
+                                    $d = date_parse($usr["u_creationdate"]);
+                                    $y = $d["year"]; $m = sprintf("%02d", $d["month"]); $day = $d["day"];
+                                    echo "$day/$m/$y";
+                                    ?>
+                                </span></span><br/>
+                                <span class="user-titles">Biography</span><br/>
+                                <span class="user-biography"><?php echo $usr["u_bio"]; ?></span>
                             </center>
                         </div>
                     </div>
                     <script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script>
-                    <script><?php require_once 'js/Cookie.js'; ?></script>
                     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-                    <script><?php require_once 'js/Chat.js';  require_once 'Models/Dev.php'; if(!DEVELOPEMENT_STATUS){ require_once 'js/ProductionMode.js'; } ?></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/core.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+                    <script><?php require_once 'js/Cookie.js'; ?>var sid = <?php echo $user["u_id"];?>;var rid = <?php echo $usr["u_id"];?>;var cid = <?php echo $this->model->getcidformuids($user["u_id"],$usr["u_id"]); ?>;var mode = "<?php echo $mode;?>";<?php require_once 'js/Chat.js';  require_once 'Models/Dev.php'; if(!DEVELOPEMENT_STATUS){ require_once 'js/ProductionMode.js'; } ?></script>
                     <script><?php require_once 'js/ChatContextMenu.js'; ?></script>
                 </body>
                 </html>
             <?php
+        }
+
+        public function sendmessage(){
+            if(!$this->controller->isLoggedin()){
+                header("location: /login");
+                exit;
+            }else{
+                $user=$this->model->getuserinfofromsession();
+                if($user["u_firsttime"]==1){
+                    header("location: /account/setup");
+                    exit;
+                }
+            }
+            if(isset($_POST["senderid"])&&isset($_POST["reciverid"])&&isset($_POST["msg"])
+                &&isset($_POST["mode"])&&isset($_POST["type"])
+                &&isset($_POST["secret"])&&$_POST["secret"]==md5(strval($_POST["senderid"]).strval($_POST["reciverid"]))){
+                $msg = htmlspecialchars($_POST["msg"]);
+                $sid = htmlspecialchars($_POST["senderid"]);
+                $rid = htmlspecialchars($_POST["reciverid"]);  
+                $mode = htmlspecialchars($_POST["mode"]);
+                $msgtype = htmlspecialchars($_POST["type"]);
+                if($this->model->userexistsbyid($sid)&&$this->model->userexistsbyid($rid)){
+                    $con = $this->model->createConnection();
+                    if($this->model->checkifconversationexists($sid,$rid)){
+                        $q1 = mysqli_query($con,"SELECT * FROM `conversations` WHERE `u_starter`=$sid AND `u_destination`=$rid");
+                        if(mysqli_num_rows($q1)>0){
+                            $conversation = mysqli_fetch_assoc($q1);
+                            $msgcon = $this->model->createMessagesConnection();
+                            if($msgcon!=null){
+                                $sql = 'INSERT INTO messages(c_id,u_id,msg_text,msg_type) VALUES(:cid,:uid,:msgtext,:msgtype)';
+                                $q2 = $msgcon->prepare($sql);
+                                $q2->bindValue(':cid',$conversation["c_id"]);
+                                $q2->bindValue(':uid',$sid);
+                                $q2->bindValue(':msgtext',$msg);
+                                $q2->bindValue(':msgtype',$msgtype);
+                                if($q2->execute()){
+                                    return "Success";
+                                }else{
+                                    $q3 = mysqli_query($con,"SELECT * FROM `users` WHERE `u_id`=$rid");
+                                    if(mysqli_num_rows($q3)>0){
+                                        $usr = mysqli_fetch_assoc($q3);
+                                        header("location: /chat?u=".$usr["u_username"]."&m=$mode");
+                                        exit;
+                                    }else{
+                                        header("location: /");
+                                        exit;
+                                    }
+                                }
+                            }else{
+                                $q2 = mysqli_query($con,"SELECT * FROM `users` WHERE `u_id`=$rid");
+                                if(mysqli_num_rows($q2)>0){
+                                    $usr = mysqli_fetch_assoc($q2);
+                                    header("location: /chat?u=".$usr["u_username"]."&m=$mode");
+                                    exit;
+                                }else{
+                                    header("location: /");
+                                    exit;
+                                }
+                            }
+                        }else{
+                            $q2 = mysqli_query($con,"SELECT * FROM `users` WHERE `u_id`=$rid");
+                            if(mysqli_num_rows($q2)>0){
+                                $usr = mysqli_fetch_assoc($q2);
+                                header("location: /chat?u=".$usr["u_username"]."&m=$mode");
+                                exit;
+                            }else{
+                                header("location: /");
+                                exit;
+                            }
+                        }
+                    }else{
+                        $q1 = mysqli_query($con,"INSERT INTO `conversations`(`u_starter`, `u_destination`) VALUES ($sid,$rid)");
+                        if($q1){
+                            $q2 = mysqli_query($con,"SELECT * FROM `conversations` WHERE `u_starter`=$sid AND `u_destination`=$rid");
+                            if(mysqli_num_rows($q2)>0){
+                                $conversation = mysqli_fetch_assoc($q2);
+                                $q3 = mysqli_query($con,"INSERT INTO `user_status_in_conversations`(`c_id`, `u_id`) VALUES (".$conversation["c_id"].",$sid)");
+                                if($q3){
+                                    $q4 = mysqli_query($con,"INSERT INTO `user_status_in_conversations`(`c_id`, `u_id`) VALUES (".$conversation["c_id"].",$rid)");
+                                    if ($q4) {
+                                        $msgcon = $this->model->createMessagesConnection();
+                                        if($msgcon!=null){
+                                            $sql = 'INSERT INTO messages(c_id,u_id,msg_text,msg_type) VALUES(:cid,:uid,:msgtext,:msgtype)';
+                                            $q5 = $msgcon->prepare($sql);
+                                            $q5->bindValue(':cid',$conversation["c_id"]);
+                                            $q5->bindValue(':uid',$sid);
+                                            $q5->bindValue(':msgtext',$msg);
+                                            $q5->bindValue(':msgtype',$msgtype);
+                                            if($q5->execute()){
+                                                return "Success";
+                                            }else{
+                                                $q6 = mysqli_query($con,"SELECT * FROM `users` WHERE `u_id`=$rid");
+                                                if(mysqli_num_rows($q6)>0){
+                                                    $usr = mysqli_fetch_assoc($q6);
+                                                    header("location: /chat?u=".$usr["u_username"]."&m=$mode");
+                                                    exit;
+                                                }else{
+                                                    header("location: /");
+                                                    exit;
+                                                }
+                                            }
+                                        }else{
+                                            $q5 = mysqli_query($con,"SELECT * FROM `users` WHERE `u_id`=$rid");
+                                            if(mysqli_num_rows($q5)>0){
+                                                $usr = mysqli_fetch_assoc($q5);
+                                                header("location: /chat?u=".$usr["u_username"]."&m=$mode");
+                                                exit;
+                                            }else{
+                                                header("location: /");
+                                                exit;
+                                            }
+                                        }
+                                    }else{
+                                        $q5 = mysqli_query($con,"SELECT * FROM `users` WHERE `u_id`=$rid");
+                                        if(mysqli_num_rows($q5)>0){
+                                            $usr = mysqli_fetch_assoc($q5);
+                                            header("location: /chat?u=".$usr["u_username"]."&m=$mode");
+                                            exit;
+                                        }else{
+                                            header("location: /");
+                                            exit;
+                                        }
+                                    }
+                                }else{
+                                    $q4 = mysqli_query($con,"SELECT * FROM `users` WHERE `u_id`=$rid");
+                                    if(mysqli_num_rows($q4)>0){
+                                        $usr = mysqli_fetch_assoc($q4);
+                                        header("location: /chat?u=".$usr["u_username"]."&m=$mode");
+                                        exit;
+                                    }else{
+                                        header("location: /");
+                                        exit;
+                                    }
+                                }
+                            }else{
+                                $q3 = mysqli_query($con,"SELECT * FROM `users` WHERE `u_id`=$rid");
+                                if(mysqli_num_rows($q3)>0){
+                                    $usr = mysqli_fetch_assoc($q3);
+                                    header("location: /chat?u=".$usr["u_username"]."&m=$mode");
+                                    exit;
+                                }else{
+                                    header("location: /");
+                                    exit;
+                                }
+                            }
+                        }else{
+                            $q2 = mysqli_query($con,"SELECT * FROM `users` WHERE `u_id`=$rid");
+                            if(mysqli_num_rows($q2)>0){
+                                $usr = mysqli_fetch_assoc($q2);
+                                header("location: /chat?u=".$usr["u_username"]."&m=$mode");
+                                exit;
+                            }else{
+                                header("location: /");
+                                exit;
+                            }
+                        }
+                    }
+                }else{
+                    header("location: /");
+                    exit;
+                }
+            }else{
+                header("location: /");
+                exit;
+            }
+        }
+
+        public function getmessages(){
+            if(!$this->controller->isLoggedin()){
+                header("location: /login");
+                exit;
+            }else{
+                $user=$this->model->getuserinfofromsession();
+                if($user["u_firsttime"]==1){
+                    header("location: /account/setup");
+                    exit;
+                }
+            }
+            if(isset($_GET["mode"])&&($_GET["mode"]=="c"||$_GET["mode"]=="j")&&isset($_GET["cid"])
+            &&isset($_GET["startpoint"])&&isset($_GET["limit"])&&isset($_GET["isstartpoint"])){
+                $con = $this->model->createConnection();
+                $msgcon = $this->model->createMessagesConnection();
+                $uid = $this->model->getuserinfofromsession()['u_id'];
+                $cid = $_GET["cid"];
+                $limit = $_GET["limit"];
+                $mode = $_GET["mode"];
+                $q1 = mysqli_query($con,"SELECT * FROM `conversations` WHERE (`u_starter`=$uid OR `u_destination`=$uid) AND `c_id`=$cid;");
+                if(mysqli_num_rows($q1)>0){
+                    if(intval($_GET["isstartpoint"])==1){
+                        if($msgcon!=null){
+                            $start = $_GET["startpoint"];
+                            if(!isset($_GET["position"]))
+                                $sql = "SELECT * FROM messages WHERE msg_creationtime>='$start' AND c_id=$cid ORDER BY msg_creationtime ASC LIMIT $limit;";
+                            else if($_GET["position"]=="top")
+                                $sql = "SELECT * FROM messages WHERE msg_creationtime<='$start' AND c_id=$cid ORDER BY msg_creationtime ASC LIMIT $limit;";
+                            else
+                                $sql = "SELECT * FROM messages WHERE msg_creationtime>='$start' AND c_id=$cid ORDER BY msg_creationtime ASC LIMIT $limit;";
+                            $arr = array();
+                            $q2 = $msgcon->query($sql);
+                            while ($res = $q2->fetch(PDO::FETCH_ASSOC)) {
+                                array_push($arr,array("msg_id"=>$res["msg_id"],"text"=>$res["msg_text"],"type"=>$res["msg_type"],"status"=>($res["msg_seen_by_starter"]==1&&$res["msg_seen_by_destination"]==1)?"seen":"delivered","creationdate"=>$res["msg_creationtime"]));
+                            }
+                            echo json_encode(array("status"=>"Success","result"=>$arr));
+                        }else{
+                            $q2 = mysqli_query($con,"SELECT * FROM `users` WHERE `u_id`=$uid");
+                            if(mysqli_num_rows($q2)>0){
+                                $usr = mysqli_fetch_assoc($q2);
+                                header("location: /chat?u=".$usr["u_username"]."&m=$mode");
+                                exit;
+                            }else{
+                                header("location: /");
+                                exit;
+                            }
+                        }
+                    }else{
+                        if($msgcon!=null){
+                            $sql = "SELECT * FROM messages WHERE c_id=$cid AND msg_seen_by_starter=1 AND msg_seen_by_destination=1 ORDER BY msg_creationtime DESC LIMIT $limit;";
+                            $q2 = $msgcon->query($sql);
+                            if ($q2->fetchColumn() > 0) {
+                                $lastid = intval($q2->fetch(PDO::FETCH_ASSOC)["msg_creationtime"]);
+                                $arr = array();
+                                $sql2 = "SELECT * FROM messages WHERE msg_creationtime>'$lastid' AND c_id=$cid ORDER BY msg_creationtime ASC LIMIT $limit;";
+                                $q3 = $msgcon->query($sql2);
+                                if ($q3->fetchColumn() > 0){
+                                    while ($res = $q3->fetch(PDO::FETCH_ASSOC)) {
+                                        array_push($arr,array("msg_id"=>$res["msg_id"],"text"=>$res["msg_text"],"type"=>$res["msg_type"],"status"=>($res["msg_seen_by_starter"]==1&&$res["msg_seen_by_destination"]==1)?"seen":"delivered","creationdate"=>$res["msg_creationtime"]));
+                                    }
+                                    if(array_count_values($arr)>0)
+                                        echo json_encode(array("status"=>"Success","result"=>$arr,"pointer"=>1));
+                                    else
+                                        echo json_encode(array("status"=>"Success","result"=>$arr));
+                                }else{
+                                    $sql = "SELECT * FROM messages WHERE msg_creationtime<'$lastid' AND c_id=$cid ORDER BY msg_creationtime ASC LIMIT $limit;";
+                                    $arr = array();
+                                    $q4 = $msgcon->query($sql);
+                                    while ($res = $q4->fetch(PDO::FETCH_ASSOC)) {
+                                        array_push($arr,array("msg_id"=>$res["msg_id"],"text"=>$res["msg_text"],"type"=>$res["msg_type"],"status"=>($res["msg_seen_by_starter"]==1&&$res["msg_seen_by_destination"]==1)?"seen":"delivered","creationdate"=>$res["msg_creationtime"]));
+                                    }
+                                    if(array_count_values($arr)>0)
+                                        echo json_encode(array("status"=>"Success","result"=>$arr,"pointer"=>1));
+                                    else
+                                        echo json_encode(array("status"=>"Success","result"=>$arr));
+                                }
+                            }else{
+                                $start = 0;
+                                $sql = "SELECT * FROM messages WHERE c_id=$cid ORDER BY msg_creationtime ASC LIMIT $limit;";
+                                $arr = array();
+                                $q3 = $msgcon->query($sql);
+                                while ($res = $q3->fetch(PDO::FETCH_ASSOC)) {
+                                    array_push($arr,array("msg_id"=>$res["msg_id"],"text"=>$res["msg_text"],"type"=>$res["msg_type"],"status"=>($res["msg_seen_by_starter"]==1&&$res["msg_seen_by_destination"]==1)?"seen":"delivered","creationdate"=>$res["msg_creationtime"]));
+                                }
+                                if(array_count_values($arr)>0)
+                                    echo json_encode(array("status"=>"Success","result"=>$arr,"pointer"=>1));
+                                else
+                                    echo json_encode(array("status"=>"Success","result"=>$arr));
+                            }
+                                
+                        }else{
+                            $q5 = mysqli_query($con,"SELECT * FROM `users` WHERE `u_id`=$uid");
+                            if(mysqli_num_rows($q5)>0){
+                                $usr = mysqli_fetch_assoc($q5);
+                                header("location: /chat?u=".$usr["u_username"]."&m=$mode");
+                                exit;
+                            }else{
+                                header("location: /");
+                                exit;
+                            }
+                        }
+                    }
+                }else{
+                    
+                    echo json_encode(array("status"=>"Access-Denied"));
+                }
+            }else{
+                header("location: /");
+                exit;
+            }
         }
 
         public function create(){

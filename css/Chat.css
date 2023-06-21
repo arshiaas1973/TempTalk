@@ -1,27 +1,4 @@
-@font-face {
-  font-family: Rubik;
-  src: url(../fonts/RubikMarkerHatch-Regular.ttf);
-}
-@font-face {
-  font-family: Boogaloo;
-  src: url(../fonts/Boogaloo-Regular.ttf);
-}
-@font-face {
-  font-family: coolveticarg;
-  src: url(../fonts/coolveticarg.otf);
-}
-@font-face {
-  font-family: roboto;
-  src: url(../fonts/Roboto-Regular.ttf);
-}
-@font-face {
-  font-family: typewcond;
-  src: url(../fonts/typewcond.otf);
-}
-@font-face {
-  font-family: alice;
-  src: url(../fonts/AliceYotsubaInc.ttf);
-}
+@import url(Fonts.css);
 body {
   width: 100%;
   height: 100%;
@@ -277,7 +254,10 @@ a {
   margin-top: 25px;
   border: 0px;
   transition: all 0.1s ease-in-out;
-  cursor: pointer;
+}
+
+.chat-panel .user-profile-details center:first-child {
+  overflow: scroll;
 }
 
 .chat-panel .user-profile-details div.names {
@@ -286,33 +266,234 @@ a {
   width: -moz-min-content;
   width: min-content;
   height: 60px;
-  display: inline-block;
+  margin: 10px 0px 60px 0px;
 }
 
 .chat-panel .user-profile-details div span.user-displayedname {
   float: left;
   margin: 0px 10px;
   font-family: alice;
-  font-size: 22px;
+  font-size: 26px;
   display: flex;
   margin-top: 8px;
   height: 27px !important;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: clip;
-  max-width: 210px;
+  max-width: 380px;
 }
 
 .chat-panel .user-profile-details div span.user-username {
   float: left;
   margin-left: 14px;
   font-family: typewcond;
-  font-size: 20px;
+  font-size: 22px;
   margin-top: -8px;
-  color: #565656;
   height: 27px !important;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: clip;
-  max-width: 210px;
+  max-width: 380px;
+}
+
+.chat-panel .user-profile-details div span.user-username-light {
+  color: #565656;
+}
+
+.chat-panel .user-profile-details div span.user-username-dark {
+  color: #dedede;
+}
+
+.chat-panel .user-profile-details span.user-titles {
+  display: flex;
+  float: left;
+  font-family: Boogaloo;
+  font-size: 28px;
+  margin: 0px 20px;
+}
+
+.chat-panel .user-profile-details span.user-date {
+  display: flex;
+  float: left;
+  font-family: typewcond;
+  margin: 0px 20px;
+}
+
+.chat-panel .user-profile-details span.user-biography {
+  float: left;
+  font-family: typewcond;
+  margin: 10px 40px;
+  width: 80%;
+  text-align: left;
+  font-size: 23px;
+}
+
+.chat-panel .message-section {
+  max-width: 1400px;
+  height: 96.3%;
+  margin-top: 20px;
+}
+
+.chat-panel .message-section div.message-body {
+  max-width: 1400px;
+  height: 77%;
+  padding: 30px;
+  display: grid;
+  overflow: scroll;
+}
+
+.chat-panel .message-section div.message-box {
+  max-width: 1400px;
+  height: 15%;
+  display: flex;
+  gap: 10px;
+}
+
+.chat-panel .message-section div.message-box textarea {
+  width: 1200px;
+  height: 80%;
+  border: 4px solid #000;
+  border-radius: 35px;
+  padding: 8px 20px;
+  resize: none;
+  font-size: 26px;
+  font-family: alice, dirooz, dirooz-number;
+  flex: 1;
+  font-weight: lighter;
+  letter-spacing: 1px;
+}
+
+.chat-panel .message-section div.message-box textarea:hover {
+  border: 4px solid #F59E0B !important;
+}
+
+.chat-panel .message-section div.message-box textarea:focus {
+  border: 4px solid #DC2626 !important;
+}
+
+.chat-panel .message-section div.message-box button.message-submit {
+  width: 60px;
+  height: 70px;
+  transform: translateY(40%);
+  border: 4px solid #000;
+  border-radius: 25px;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.chat-panel .message-section div.message-box button.message-submit img {
+  transition: all 0.4s ease-in-out;
+}
+
+.chat-panel .message-section div.message-box button.message-submit-dark {
+  background: #FF5722;
+  color: #fff;
+}
+
+.chat-panel .message-section div.message-box button.message-submit-light {
+  background-color: #009688;
+  color: #fff;
+}
+
+.chat-panel .message-section div.message-box button.message-submit-dark:hover {
+  border: 4px solid #C62828 !important;
+}
+
+.chat-panel .message-section div.message-box button.message-submit-light:hover {
+  border: 4px solid #0288D1 !important;
+}
+
+.chat-panel .message-section div.message-box button.message-submit:hover img {
+  width: 45px;
+  height: 45px;
+}
+
+.chat-panel .message-section div.message-body .message {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.chat-panel .message-section div.message-body .message div {
+  min-width: 140px;
+  max-width: 450px;
+  padding: 30px;
+  background: #dedede;
+  border-radius: 40px;
+}
+
+.chat-panel .message-section div.message-body .message.sender div {
+  float: right;
+  border-bottom-right-radius: 0px !important;
+}
+
+.chat-panel .message-section div.message-body .message.reciever div {
+  float: left;
+  border-bottom-left-radius: 0px !important;
+}
+
+.chat-panel .message-section div.message-body .message div p {
+  word-wrap: anywhere;
+  margin: 0px;
+  font-family: Trebuchet;
+  font-size: 24px;
+}
+
+.chat-panel .message-section div.message-body .message div div.message-details {
+  padding: 0px;
+  bottom: -20px;
+  position: relative;
+  color: #555;
+}
+
+.chat-panel .message-section div.message-body .message div span.message-status {
+  float: left;
+  font-family: Pacifico;
+  font-size: 18px;
+}
+
+.chat-panel .message-section div.message-body .message div span.message-time {
+  float: right;
+  font-family: Oswald;
+  font-size: 22px;
+}
+
+.chat-panel .message-section div.message-body img.prof-pic {
+  width: 50px;
+  height: 50px;
+  line-height: 60px;
+  transform: translateY(10%);
+  border-radius: 25px;
+  border: 0px;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+  margin-top: 40px;
+  padding: 5px;
+}
+
+.chat-panel .message-section div.message-body span.normal img.prof-pic {
+  background: #343434;
+  padding: 5px;
+  border-radius: 30px;
+}
+
+.chat-panel .message-section div.message-body span.king img.prof-pic {
+  background: #FFB300;
+  padding: 5px;
+  border-radius: 30px;
+}
+
+.chat-panel .message-section div.message-body span.queen img.prof-pic {
+  background: radial-gradient(circle at 100% 100%, #ffffff00 0, #ffffff00 3px, transparent 3px) 0% 0%/8px 8px no-repeat, radial-gradient(circle at 0 100%, #ffffff00 0, #ffffff00 3px, transparent 3px) 100% 0%/8px 8px no-repeat, radial-gradient(circle at 100% 0, #ffffff00 0, #ffffff00 3px, transparent 3px) 0% 100%/8px 8px no-repeat, radial-gradient(circle at 0 0, #ffffff00 0, #ffffff00 3px, transparent 3px) 100% 100%/8px 8px no-repeat, linear-gradient(#ffffff00, #ffffff00) 50% 50%/calc(100% - 10px) calc(100% - 16px) no-repeat, linear-gradient(#ffffff00, #ffffff00) 50% 50%/calc(100% - 16px) calc(100% - 10px) no-repeat, linear-gradient(transparent 0%, #ffb300 0%, #e53935 100%);
+  padding: 5px;
+  border-radius: 30px;
+}
+
+.chat-panel .message-section div.message-body .message.sender img.prof-pic {
+  float: right;
+  margin-left: 25px;
+}
+
+.chat-panel .message-section div.message-body .message.reciever img.prof-pic {
+  float: left;
+  margin-right: 25px;
 }/*# sourceMappingURL=Chat.css.map */

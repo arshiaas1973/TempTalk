@@ -65,9 +65,18 @@
             return false;
         }
 
-        public function userexists($username){
+        public function userexists(string $username){
             $con = $this->createConnection();
             $query = mysqli_query($con,"SELECT * FROM `users` WHERE `u_username`='$username'");
+            if(mysqli_num_rows($query)>0)
+                return true;
+            else
+                return false;
+        }
+
+        public function userexistsbyid($uid){
+            $con = $this->createConnection();
+            $query = mysqli_query($con,"SELECT * FROM `users` WHERE `u_id`=$uid");
             if(mysqli_num_rows($query)>0)
                 return true;
             else
@@ -83,4 +92,32 @@
                 return false;
         }
 
+        public function checkifconversationexists($sender_id, $reciver_id){
+            $con = $this->createConnection();
+            $query = mysqli_query($con,"SELECT * FROM `conversations` WHERE (`u_starter`=$sender_id AND `u_destination`=$reciver_id) OR (`u_starter`=$reciver_id AND `u_destination`=$sender_id)");
+            if(mysqli_num_rows($query)>0)
+                return true;
+            else
+                return false;
+        }
+
+        public function getcidformuids($sender_id, $reciver_id){
+            $con = $this->createConnection();
+            $query = mysqli_query($con,"SELECT * FROM `conversations` WHERE (`u_starter`=$sender_id AND `u_destination`=$reciver_id) OR (`u_starter`=$reciver_id AND `u_destination`=$sender_id)");
+            if(mysqli_num_rows($query)>0)
+                return mysqli_fetch_assoc($query)["c_id"];
+            else
+                return false;
+        }
+
+        public function createMessagesConnection(){
+            $dsn = 'pgsql:host=localhost;port=5432;dbname=temptalk';
+            $user="root"; $pass="admin";
+            try {
+                $pdo = new PDO($dsn,$user,$pass);
+                return $pdo;
+            } catch (PDOException $ex) {
+                return null;
+            }
+        }
     }

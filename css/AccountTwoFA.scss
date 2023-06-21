@@ -1,23 +1,4 @@
-@font-face {
-    font-family: Rubik;
-    src: url(../fonts/RubikMarkerHatch-Regular.ttf);
-}
-@font-face {
-    font-family: typewcond;
-    src: url(../fonts/typewcond.otf);
-}
-@font-face {
-    font-family: coolveticarg;
-    src: url(../fonts/coolveticarg.otf);
-}
-@font-face {
-    font-family: Boogaloo;
-    src: url(../fonts/Boogaloo-Regular.ttf);
-}
-@font-face {
-    font-family: roboto;
-    src: url(../fonts/Roboto-Regular.ttf);
-}
+@import url(Fonts.css);
 body{
     width: 100%;
     height: 100%;

@@ -1,0 +1,48 @@
+@font-face {
+  font-family: Rubik;
+  src: url(../fonts/RubikMarkerHatch-Regular.woff) format("woff");
+}
+@font-face {
+  font-family: Boogaloo;
+  src: url(../fonts/Quikhand.woff) format("woff");
+}
+@font-face {
+  font-family: coolveticarg;
+  src: url(../fonts/coolveticarg.otf);
+}
+@font-face {
+  font-family: roboto;
+  src: url(../fonts/Roboto-Regular.woff) format("woff");
+}
+@font-face {
+  font-family: typewcond;
+  src: url(../fonts/typewcond_regular.woff) format("woff");
+}
+@font-face {
+  font-family: alice;
+  src: url(../fonts/AliceYotsubaInc.ttf);
+}
+@font-face {
+  font-family: dirooz;
+  src: url(../fonts/Dirooz.ttf);
+}
+@font-face {
+  font-family: dirooz-number;
+  src: url(../fonts/Dirooz-FD.ttf);
+}
+@font-face {
+  font-family: King;
+  src: url(../fonts/typewcond_regular.woff) format("woff");
+}
+@font-face {
+  font-family: Trebuchet;
+  src: url(../fonts/trebuc.woff) format("woff");
+}
+@font-face {
+  font-family: Pacifico;
+  src: url(../fonts/Pacifico.woff);
+}
+@font-face {
+  font-family: Oswald;
+  src: url(../fonts/Oswald-Regular.woff);
+}/*# sourceMappingURL=Fonts.css.map */

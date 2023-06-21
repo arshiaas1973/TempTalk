@@ -77,4 +77,24 @@
         
             return $os_platform;
         }
+
+        public function getuserfirst2fa(){
+            $con = $this->createConnection();
+            $q = mysqli_query($con,"SELECT * FROM `2fa_temp` WHERE `u_id`=".$_COOKIE["2faid"]." ORDER BY `a_id` DESC");
+            if(mysqli_num_rows($q)>0){
+                return mysqli_fetch_assoc($q);
+            }else{
+                return null;
+            }
+        }
+
+        public function getuserinfofromid($id){
+            $con = $this->createConnection();
+            $q1 = mysqli_query($con,"SELECT * FROM `users` WHERE `u_id`=".$id);
+            if($q1){
+                return mysqli_fetch_assoc($q1);
+            }else{
+                return "false";
+            }
+        }
     }

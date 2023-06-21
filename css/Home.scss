@@ -1,11 +1,4 @@
-@font-face {
-    font-family: Rubik;
-    src: url(../fonts/RubikMarkerHatch-Regular.ttf);
-}
-@font-face {
-    font-family: King;
-    src: url(../fonts/typewcond.otf);
-}
+@import url(Fonts.css);
 body{
     width: 100%;
     height: 100%;

@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'af3c1ec980608cfaa06015930381b6449f2ea7f2',
+        'reference' => '04e39d6d9b8629483bc0f6c3b2765e544655cfdc',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'af3c1ec980608cfaa06015930381b6449f2ea7f2',
+            'reference' => '04e39d6d9b8629483bc0f6c3b2765e544655cfdc',
             'dev_requirement' => false,
         ),
         'firebase/php-jwt' => array(
@@ -116,6 +116,15 @@
             'install_path' => __DIR__ . '/../phpmailer/phpmailer',
             'aliases' => array(),
             'reference' => 'df16b615e371d81fb79e506277faea67a1be18f1',
+            'dev_requirement' => false,
+        ),
+        'phpquery/phpquery' => array(
+            'pretty_version' => '0.0.4',
+            'version' => '0.0.4.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpquery/phpquery',
+            'aliases' => array(),
+            'reference' => 'a03f94bae1c5e4c4e78e400aa0279ef61a5ccf82',
             'dev_requirement' => false,
         ),
         'phpseclib/phpseclib' => array(
