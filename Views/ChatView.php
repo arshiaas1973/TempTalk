@@ -20,6 +20,7 @@
 
         public function index()
         {       
+                $this->model->checkLocationCookie();
                 $user=null;
                 if(!$this->controller->isLoggedin()){
                     header("location: /login");
@@ -64,8 +65,8 @@
                         <div class="header-bar header-bar-<?=$color_scheme?>">
                             <img class="back-button" src="/img/back-<?=$color_scheme?>.png" 
                                 onclick="window.location.href='<?php if($mode=='c') echo '/chat/create'; else echo '/chat/join';?>'"/>
-                            <img class="user-pfp user-pfp-<?=$color_scheme?>" src="<?php if($user["u_id"]!=$usr["u_id"]) echo $usr["u_profilepic"]; else echo '/img/savedimages.webp'; ?>" onclick="ShowProfilePanel();"/>
-                            <span class="user-displayedname" onclick="ShowProfilePanel();"><?php if($user["u_id"]!=$usr["u_id"]) echo $usr["u_displayedname"]; else echo 'Saved Messages'; ?></span>
+                            <img class="user-pfp user-pfp-<?=$color_scheme?>" src="<?php if($user["u_id"]!=$usr["u_id"]) echo htmlspecialchars($usr["u_profilepic"]); else echo '/img/savedimages.webp'; ?>" onclick="ShowProfilePanel();"/>
+                            <span class="user-displayedname" onclick="ShowProfilePanel();"><?php if($user["u_id"]!=$usr["u_id"]) echo htmlspecialchars($usr["u_displayedname"]); else echo 'Saved Messages'; ?></span>
                             <?php
                             if($usr['u_role']=="king"){
                                 ?>
@@ -88,129 +89,6 @@
                         </div>
                         <div class="message-section">
                             <div class="message-body">
-                                <div class="message-spliter">
-                                    
-                                </div>
-                                <div class="message sender">
-                                    <span class="normal">
-                                        <img class="prof-pic" src="/img/profile.png"/>
-                                    </span>
-                                    <div>
-                                        <p>fdsdfs</p>
-                                        <div class="message-details">
-                                            <span class="message-status">Seen</span>
-                                            <span class="message-time">20:20</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="message sender">
-                                    <span class="normal">
-                                        <img class="prof-pic" src="/img/profile.png"/>
-                                    </span>
-                                    <div>
-                                        <p>fdsdfs</p>
-                                        <div class="message-details">
-                                            <span class="message-status">Seen</span>
-                                            <span class="message-time">20:20</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="message sender">
-                                    <span class="normal">
-                                        <img class="prof-pic" src="/img/profile.png"/>
-                                    </span>
-                                    <div>
-                                        <p>fdsdfs</p>
-                                        <div class="message-details">
-                                            <span class="message-status">Seen</span>
-                                            <span class="message-time">20:20</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="message sender">
-                                    <span class="normal">
-                                        <img class="prof-pic" src="/img/profile.png"/>
-                                    </span>
-                                    <div>
-                                        <p>fdsdfs</p>
-                                        <div class="message-details">
-                                            <span class="message-status">Seen</span>
-                                            <span class="message-time">20:20</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="message sender">
-                                    <span class="normal">
-                                        <img class="prof-pic" src="/img/profile.png"/>
-                                    </span>
-                                    <div>
-                                        <p>fdsdfs</p>
-                                        <div class="message-details">
-                                            <span class="message-status">Seen</span>
-                                            <span class="message-time">20:20</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="message sender">
-                                    <span class="normal">
-                                        <img class="prof-pic" src="/img/profile.png"/>
-                                    </span>
-                                    <div>
-                                        <p>fdsdfs</p>
-                                        <div class="message-details">
-                                            <span class="message-status">Seen</span>
-                                            <span class="message-time">20:20</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="message sender">
-                                    <span class="normal">
-                                        <img class="prof-pic" src="/img/profile.png"/>
-                                    </span>
-                                    <div>
-                                        <p>fdsdfs</p>
-                                        <div class="message-details">
-                                            <span class="message-status">Seen</span>
-                                            <span class="message-time">20:20</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="message sender">
-                                    <span class="normal">
-                                        <img class="prof-pic" src="/img/profile.png"/>
-                                    </span>
-                                    <div>
-                                        <p>fdsdfs</p>
-                                        <div class="message-details">
-                                            <span class="message-status">Seen</span>
-                                            <span class="message-time">20:20</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="message sender">
-                                    <span class="normal">
-                                        <img class="prof-pic" src="/img/profile.png"/>
-                                    </span>
-                                    <div>
-                                        <p>fdsdfs</p>
-                                        <div class="message-details">
-                                            <span class="message-status">Seen</span>
-                                            <span class="message-time">20:20</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="message sender">
-                                    <span class="normal">
-                                        <img class="prof-pic" src="/img/profile.png"/>
-                                    </span>
-                                    <div>
-                                        <p>fdsdfs</p>
-                                        <div class="message-details">
-                                            <span class="message-status">Seen</span>
-                                            <span class="message-time">20:20</span>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                             <div class="message-box">
                                 <textarea></textarea>
@@ -282,9 +160,10 @@
                                 $q2 = $msgcon->prepare($sql);
                                 $q2->bindValue(':cid',$conversation["c_id"]);
                                 $q2->bindValue(':uid',$sid);
-                                $q2->bindValue(':msgtext',$msg);
+                                $q2->bindValue(':msgtext',$this->model->EncryptingMessages($msg));
                                 $q2->bindValue(':msgtype',$msgtype);
                                 if($q2->execute()){
+                                    mysqli_query($con,"UPDATE `user_status_in_conversations` `u_isupdated`=1 WHERE `u_id`=$rid AND `c_id`=".$conversation["c_id"].";");
                                     return "Success";
                                 }else{
                                     $q3 = mysqli_query($con,"SELECT * FROM `users` WHERE `u_id`=$rid");
@@ -335,7 +214,7 @@
                                             $q5 = $msgcon->prepare($sql);
                                             $q5->bindValue(':cid',$conversation["c_id"]);
                                             $q5->bindValue(':uid',$sid);
-                                            $q5->bindValue(':msgtext',$msg);
+                                            $q5->bindValue(':msgtext',$this->model->EncryptingMessages($msg));
                                             $q5->bindValue(':msgtype',$msgtype);
                                             if($q5->execute()){
                                                 return "Success";
@@ -432,9 +311,9 @@
                 $con = $this->model->createConnection();
                 $msgcon = $this->model->createMessagesConnection();
                 $uid = $this->model->getuserinfofromsession()['u_id'];
-                $cid = $_GET["cid"];
-                $limit = $_GET["limit"];
-                $mode = $_GET["mode"];
+                $cid = htmlspecialchars($_GET["cid"]);
+                $limit = htmlspecialchars($_GET["limit"]);
+                $mode = htmlspecialchars($_GET["mode"]);
                 $q1 = mysqli_query($con,"SELECT * FROM `conversations` WHERE (`u_starter`=$uid OR `u_destination`=$uid) AND `c_id`=$cid;");
                 if(mysqli_num_rows($q1)>0){
                     if(intval($_GET["isstartpoint"])==1){
@@ -449,9 +328,10 @@
                             $arr = array();
                             $q2 = $msgcon->query($sql);
                             while ($res = $q2->fetch(PDO::FETCH_ASSOC)) {
-                                array_push($arr,array("msg_id"=>$res["msg_id"],"text"=>$res["msg_text"],"type"=>$res["msg_type"],"status"=>($res["msg_seen_by_starter"]==1&&$res["msg_seen_by_destination"]==1)?"seen":"delivered","creationdate"=>$res["msg_creationtime"]));
+                                $uu = $this->model->getuserbyid($res["u_id"]);
+                                array_push($arr,array("msg_id"=>$res["msg_id"],"flag"=>($res["u_id"]==$uid)?"sender":"reciever","role"=>$uu["u_role"],"user_pfp"=>$uu["u_profilepic"],"text"=>$res["msg_text"],"type"=>$res["msg_type"],"status"=>($res["msg_seen_by_starter"]==1&&$res["msg_seen_by_destination"]==1)?"Seen":"Delivered","creationdate"=>$res["msg_creationtime"]));
                             }
-                            echo json_encode(array("status"=>"Success","result"=>$arr));
+                            $this->model->printMessages(array("status"=>"Success","result"=>$arr));
                         }else{
                             $q2 = mysqli_query($con,"SELECT * FROM `users` WHERE `u_id`=$uid");
                             if(mysqli_num_rows($q2)>0){
@@ -474,23 +354,25 @@
                                 $q3 = $msgcon->query($sql2);
                                 if ($q3->fetchColumn() > 0){
                                     while ($res = $q3->fetch(PDO::FETCH_ASSOC)) {
-                                        array_push($arr,array("msg_id"=>$res["msg_id"],"text"=>$res["msg_text"],"type"=>$res["msg_type"],"status"=>($res["msg_seen_by_starter"]==1&&$res["msg_seen_by_destination"]==1)?"seen":"delivered","creationdate"=>$res["msg_creationtime"]));
+                                        $uu = $this->model->getuserbyid($res["u_id"]);
+                                        array_push($arr,array("msg_id"=>$res["msg_id"],"flag"=>($res["u_id"]==$uid)?"sender":"reciever","role"=>$uu["u_role"],"user_pfp"=>$uu["u_profilepic"],"text"=>$this->model->DecryptingMessages($res["msg_text"]),"type"=>$res["msg_type"],"status"=>($res["msg_seen_by_starter"]==1&&$res["msg_seen_by_destination"]==1)?"Seen":"Delivered","creationdate"=>$res["msg_creationtime"]));
                                     }
-                                    if(array_count_values($arr)>0)
-                                        echo json_encode(array("status"=>"Success","result"=>$arr,"pointer"=>1));
+                                    if(count($arr)>0)
+                                        $this->model->printMessages(array("status"=>"Success","result"=>$arr,"pointer"=>1));
                                     else
-                                        echo json_encode(array("status"=>"Success","result"=>$arr));
+                                        $this->model->printMessages(array("status"=>"Success","result"=>$arr));
                                 }else{
                                     $sql = "SELECT * FROM messages WHERE msg_creationtime<'$lastid' AND c_id=$cid ORDER BY msg_creationtime ASC LIMIT $limit;";
                                     $arr = array();
                                     $q4 = $msgcon->query($sql);
                                     while ($res = $q4->fetch(PDO::FETCH_ASSOC)) {
-                                        array_push($arr,array("msg_id"=>$res["msg_id"],"text"=>$res["msg_text"],"type"=>$res["msg_type"],"status"=>($res["msg_seen_by_starter"]==1&&$res["msg_seen_by_destination"]==1)?"seen":"delivered","creationdate"=>$res["msg_creationtime"]));
+                                        $uu = $this->model->getuserbyid($res["u_id"]);
+                                        array_push($arr,array("msg_id"=>$res["msg_id"],"flag"=>($res["u_id"]==$uid)?"sender":"reciever","role"=>$uu["u_role"],"user_pfp"=>$uu["u_profilepic"],"text"=>$this->model->DecryptingMessages($res["msg_text"]),"type"=>$res["msg_type"],"status"=>($res["msg_seen_by_starter"]==1&&$res["msg_seen_by_destination"]==1)?"Seen":"Delivered","creationdate"=>$res["msg_creationtime"]));
                                     }
-                                    if(array_count_values($arr)>0)
-                                        echo json_encode(array("status"=>"Success","result"=>$arr,"pointer"=>1));
+                                    if(count($arr)>0)
+                                        $this->model->printMessages(array("status"=>"Success","result"=>$arr,"pointer"=>1));
                                     else
-                                        echo json_encode(array("status"=>"Success","result"=>$arr));
+                                        $this->model->printMessages(array("status"=>"Success","result"=>$arr));
                                 }
                             }else{
                                 $start = 0;
@@ -498,12 +380,13 @@
                                 $arr = array();
                                 $q3 = $msgcon->query($sql);
                                 while ($res = $q3->fetch(PDO::FETCH_ASSOC)) {
-                                    array_push($arr,array("msg_id"=>$res["msg_id"],"text"=>$res["msg_text"],"type"=>$res["msg_type"],"status"=>($res["msg_seen_by_starter"]==1&&$res["msg_seen_by_destination"]==1)?"seen":"delivered","creationdate"=>$res["msg_creationtime"]));
+                                    $uu = $this->model->getuserbyid($res["u_id"]);
+                                    array_push($arr,array("msg_id"=>$res["msg_id"],"flag"=>($res["u_id"]==$uid)?"sender":"reciever","role"=>$uu["u_role"],"user_pfp"=>$uu["u_profilepic"],"text"=>$this->model->DecryptingMessages($res["msg_text"]),"type"=>$res["msg_type"],"status"=>($res["msg_seen_by_starter"]==1&&$res["msg_seen_by_destination"]==1)?"Seen":"Delivered","creationdate"=>$res["msg_creationtime"]));
                                 }
-                                if(array_count_values($arr)>0)
-                                    echo json_encode(array("status"=>"Success","result"=>$arr,"pointer"=>1));
+                                if(count($arr)>0)
+                                    $this->model->printMessages(array("status"=>"Success","result"=>$arr,"pointer"=>1));
                                 else
-                                    echo json_encode(array("status"=>"Success","result"=>$arr));
+                                    $this->model->printMessages(array("status"=>"Success","result"=>$arr));
                             }
                                 
                         }else{
@@ -528,6 +411,30 @@
             }
         }
 
+        public function checkformessageupdate(){
+            if(!$this->controller->isLoggedin()){
+                header("location: /login");
+                exit;
+            }else{
+                $user=$this->model->getuserinfofromsession();
+                if($user["u_firsttime"]==1){
+                    header("location: /account/setup");
+                    exit;
+                }
+            }
+            if(isset($_GET["uid"])&&isset($_GET["cid"])){
+                $con = $this->model->createConnection();
+                $uid = htmlspecialchars($_GET["uid"]); $cid = htmlspecialchars($_GET["cid"]);
+                $q1 = mysqli_query($con,"SELECT * FROM `conversations` WHERE (`u_starter`=$uid OR `u_destination`=$uid) AND `c_id`=$cid;");
+                if(mysqli_num_rows($q1)>0){
+                    $q2 = mysqli_query($con,"SELECT * FROM `user_status_in_conversations` WHERE `c_id`=sid AND `u_id`=uid;")
+                }else{
+                    header("location: /");
+                    exit;
+                }
+            }
+        }
+
         public function create(){
             if(!$this->controller->isLoggedin()){
                 header("location: /login");
@@ -542,6 +449,10 @@
             $this->controller->checkCookie();
             $color_scheme = isset($_COOKIE["color_scheme"]) ? $_COOKIE["color_scheme"] : false;
             if ($color_scheme === false) $color_scheme = 'light';
+            if ($color_scheme != 'light' && $color_scheme != 'light'){
+                setcookie("color_scheme","light",time()+(60*60*24*7),"/");
+                $color_scheme = "light";
+            }
                 ?>
                 <!DOCTYPE html>
                 <html lang="en">
@@ -592,6 +503,10 @@
             $this->controller->checkCookie();
             $color_scheme = isset($_COOKIE["color_scheme"]) ? $_COOKIE["color_scheme"] : false;
             if ($color_scheme === false) $color_scheme = 'light';
+            if ($color_scheme != 'light' && $color_scheme != 'light'){
+                setcookie("color_scheme","light",time()+(60*60*24*7),"/");
+                $color_scheme = "light";
+            }
                 ?>
                 <!DOCTYPE html>
                 <html lang="en">
@@ -631,7 +546,7 @@
             if(isset($_POST["search"])){
                 $user = $this->model->getuserinfofromsession();
                 $con = $this->model->createConnection();
-                $search = $_POST["search"];
+                $search = htmlspecialchars($_POST["search"]);
                 $query = mysqli_query($con,"SELECT * FROM `users` WHERE `u_username` LIKE '%$search' OR `u_username` LIKE '$search%' OR `u_displayedname` LIKE '%$search' OR `u_displayedname` LIKE '$search%' ORDER BY `u_creationdate` DESC LIMIT 7");
                 if(mysqli_num_rows($query)>0){
                     $arr = array();
@@ -673,7 +588,7 @@
             if(isset($_POST["search"])){
                 $user = $this->model->getuserinfofromsession();
                 $con = $this->model->createConnection();
-                $search = $_POST["search"];
+                $search = htmlspecialchars($_POST["search"]);
                 $query = mysqli_query($con,"SELECT * FROM `users` WHERE `u_username` LIKE '%$search%' OR `u_displayedname` LIKE '%$search%' ORDER BY `u_creationdate` DESC LIMIT 7");
                 if(mysqli_num_rows($query)>0){
                     $arr = array();

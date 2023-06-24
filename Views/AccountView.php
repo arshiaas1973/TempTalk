@@ -39,6 +39,10 @@
             $this->controller->checkCookie();
             $color_scheme = isset($_COOKIE["color_scheme"]) ? $_COOKIE["color_scheme"] : false;
             if ($color_scheme === false) $color_scheme = 'light';
+            if ($color_scheme != 'light' && $color_scheme != 'light'){
+                setcookie("color_scheme","light",time()+(60*60*24*7),"/");
+                $color_scheme = "light";
+            }
             ?>
             <!DOCTYPE html>
             <html lang="en">
@@ -205,10 +209,10 @@
             &&isset($_COOKIE["submit2fa"])&&$_COOKIE["submit2fa"]=="done"
             &&!isset($_COOKIE["finaltouch"])&&$_COOKIE["finaltouch"]!="done"){
                 if(isset($_POST["bio"])&&isset($_POST["birthyear"])&&isset($_POST["birthmonth"])&&isset($_POST["birthday"])){
-                    $bio = $_POST["bio"];
-                    $year = $_POST["birthyear"];
-                    $month = $_POST["birthmonth"];
-                    $day = $_POST["birthday"];
+                    $bio = htmlspecialchars($_POST["bio"]);
+                    $year = htmlspecialchars($_POST["birthyear"]);
+                    $month = htmlspecialchars($_POST["birthmonth"]);
+                    $day = htmlspecialchars($_POST["birthday"]);
                     $this->controller->finishit($bio,['year'=>$year,'month'=>$month,'day'=>$day]);
                 }else{
                     header("location: /account/setup");
@@ -432,6 +436,10 @@
             $this->controller->checkCookie();
             $color_scheme = isset($_COOKIE["color_scheme"]) ? $_COOKIE["color_scheme"] : false;
             if ($color_scheme === false) $color_scheme = 'light';
+            if ($color_scheme != 'light' && $color_scheme != 'light'){
+                setcookie("color_scheme","light",time()+(60*60*24*7),"/");
+                $color_scheme = "light";
+            }
             
             ?>
             <!DOCTYPE html>
@@ -475,7 +483,7 @@
                 <?php
                 if(isset($_POST["redirectionURL"])){
                 ?>
-                <script>var url = "<?php echo $_POST["redirectionURL"]; ?>";</script>
+                <script>var url = "<?php echo htmlspecialchars($_POST["redirectionURL"]); ?>";</script>
                 <?php
                 }else{
                 ?>

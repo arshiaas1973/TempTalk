@@ -20,9 +20,14 @@
 
         public function index()
         {
+                
                 error_reporting(E_ERROR | E_PARSE);
                 $color_scheme = isset($_COOKIE["color_scheme"]) ? $_COOKIE["color_scheme"] : false;
                 if ($color_scheme === false) $color_scheme = 'light';
+                if ($color_scheme != 'light' && $color_scheme != 'light'){
+                    setcookie("color_scheme","light",time()+(60*60*24*7),"/");
+                    $color_scheme = "light";
+                }
                 ?>
                 <!DOCTYPE html>
                 <html lang="en">

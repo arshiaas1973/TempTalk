@@ -108,25 +108,15 @@ function SendingMessage() {
     }
 }
 $(".chat-panel .message-section div.message-box button.message-submit").click(function(){SendingMessage();});
-// var datas = [{"mode":mode,"cid":cid,"startpoint":0,"limit":20,"isstartpoint":0}];
-// setInterval(function () {
-//     for (let i = 0; i < datas.length; i++) {
-//         const element = datas[i];
-//         $.get("/chat/getmessages", element,
-//             function (data, textStatus, jqXHR) {
-//                 try {
-//                     var message = JSON.parse(data);
-//                     if (message["status"]=="Success") {
-//                         if (message.hasOwnProperty("pointer")) {
-                            
-//                         }
-//                         for (let i = 0; i < message["result"].length; i++) {
-//                             const element = message["result"][i];
-                            
-//                         }
-//                     }
-//                 } catch (error) {}
-//             }
-//         );
-//     }
-// },1000);
+var datas = [{"mode":mode,"cid":cid,"startpoint":0,"limit":20,"isstartpoint":0}];
+function loadMessages(){
+    for (let i = 0; i < datas.length; i++) {
+        const element = datas[i];
+        $.get("/chat/getmessages", element,
+            function (data, textStatus, jqXHR) {
+                $(".chat-panel .message-section .message-body").html(data);
+            }
+        );
+    }
+}
+loadMessages();

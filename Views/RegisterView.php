@@ -26,6 +26,10 @@
                 }
                 $color_scheme = isset($_COOKIE["color_scheme"]) ? $_COOKIE["color_scheme"] : false;
                 if ($color_scheme === false) $color_scheme = 'light';
+                if ($color_scheme != 'light' && $color_scheme != 'light'){
+                    setcookie("color_scheme","light",time()+(60*60*24*7),"/");
+                    $color_scheme = "light";
+                }
                 ?>
                 <!DOCTYPE html>
                 <html lang="en">
@@ -96,11 +100,11 @@
             }
             if (isset($_POST["email"])&&isset($_POST["username"])&&isset($_POST["displayedname"])
                 &&isset($_POST["password"])&&isset($_POST["passcode"])) {
-                $email = $_POST["email"];
-                $user = $_POST["username"];
-                $displayedname = $_POST["displayedname"];
-                $pass = $_POST["password"];
-                $passcode = $_POST["passcode"];
+                $email = htmlspecialchars($_POST["email"]);
+                $user = htmlspecialchars($_POST["username"]);
+                $displayedname = htmlspecialchars($_POST["displayedname"]);
+                $pass = htmlspecialchars($_POST["password"]);
+                $passcode = htmlspecialchars($_POST["passcode"]);
                 if(md5($user."|".$pass."|".$displayedname."|".$email)!=$passcode){
                     header("location: /register?error=Err 002: passcode was not valid.");
                     exit;

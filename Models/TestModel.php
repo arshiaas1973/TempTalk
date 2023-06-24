@@ -56,4 +56,12 @@
             return $os_platform;
         }
         
+        public function this_servers_public_ip() {
+            $realIP = file_get_contents("http://ip4only.me/api/");
+            $ip = explode(",",$realIP)[1];
+            $query = file_get_contents("https://ipapi.co/$ip/timezone/");
+            return $query;
+        }
+
+        
     }

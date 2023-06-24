@@ -312,7 +312,46 @@ a{ text-decoration: none; }
     height: 45px;
 }
 .chat-panel .message-section div.message-body .message{ width: 100%; margin-top: 30px;}
-.chat-panel .message-section div.message-body .message-spliter{ width: 100%; background: #cecece;}
+.chat-panel .message-section div.message-body .message-spliter{
+    width: 100%;
+    color: #fff;
+    border-radius: 5px;
+    font-family: coolveticarg;
+    padding: 4px 0px;
+    word-spacing: 1px;
+}
+.chat-panel .message-section div.message-body .message-spliter-dark{ background: #EF9A9A; }
+.chat-panel .message-section div.message-body .message-spliter-light{ background: #9aa9ef; }
+.chat-panel .message-section div.message-body .message-spliter table{ width: 100%; border-spacing: 0px; border-collapse: collapse; }
+.chat-panel .message-section div.message-body .message-spliter table th:first-child{ 
+    text-align: left; 
+    font-family: Oswald; 
+    border-left: 3px solid black;
+    word-spacing: 0px;
+}
+.chat-panel .message-section div.message-body .message-spliter table th:last-child{
+    text-align: right; 
+    font-family: Oswald; 
+    border-right: 3px solid black;
+    letter-spacing: 1.5px;
+}
+.chat-panel .message-section div.message-body .message-spliter table th span{
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    width: fit-content;
+    padding: 8px 19px 8px 19px;
+}
+.chat-panel .message-section div.message-body .message-spliter table th:first-child span{
+    clip-path: polygon(63% 0, 100% 50%, 63% 100%, 0% 100%, 0 46%, 0% 0%);
+    width: fit-content;
+    padding: 8px 19px 8px 8px;
+}
+.chat-panel .message-section div.message-body .message-spliter table th:last-child span{
+    clip-path: polygon(100% 0%, 100% 49%, 100% 100%, 37% 100%, 0% 50%, 37% 0);
+    width: fit-content;
+    padding: 8px 8px 8px 19px;
+}
+.chat-panel .message-section div.message-body .message-spliter-dark table th span{background-color: #790606;}
+.chat-panel .message-section div.message-body .message-spliter-light table th span{background-color: #063879;}
 .chat-panel .message-section div.message-body .message div{
     min-width: 140px;
     max-width: 450px;
@@ -339,6 +378,7 @@ a{ text-decoration: none; }
     bottom: -20px;
     position: relative;
     color: #555;
+    width: 100%;
 }
 .chat-panel .message-section div.message-body .message div span.message-status{ 
     float: left; 
