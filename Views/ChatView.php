@@ -427,7 +427,7 @@
                 $uid = htmlspecialchars($_GET["uid"]); $cid = htmlspecialchars($_GET["cid"]);
                 $q1 = mysqli_query($con,"SELECT * FROM `conversations` WHERE (`u_starter`=$uid OR `u_destination`=$uid) AND `c_id`=$cid;");
                 if(mysqli_num_rows($q1)>0){
-                    $q2 = mysqli_query($con,"SELECT * FROM `user_status_in_conversations` WHERE `c_id`=sid AND `u_id`=uid;")
+                    $q2 = mysqli_query($con,"SELECT * FROM `user_status_in_conversations` WHERE `c_id`=sid AND `u_id`=uid;");
                 }else{
                     header("location: /");
                     exit;
